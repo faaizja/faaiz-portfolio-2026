@@ -1,0 +1,43 @@
+import ContactButton from "../components/contactButton";
+
+export default function Footer() {
+	return (
+		<footer className="w-full bg-white text-black py-12">
+			<div className="mx-auto flex flex-col gap-10 px-6 md:flex-row md:items-start md:justify-between md:px-12">
+				<div className="max-w-md space-y-4">
+					<h1 className="text-2xl font-semibold tracking-tight">Let's connect</h1>
+					<p className="text-sm text-gray-600">
+						I’m always open to meeting new people and hearing what you're passionate about. My inbox is always open for anything from project inquiries to casual tech chats and everything in between.
+					</p>
+					<div className="flex flex-wrap gap-4 text-2xl">
+						<span>🔗</span>
+						<span>🔗</span>
+						<span>🔗</span>
+						<span>🔗</span>
+					</div>
+				</div>
+
+				<form className="flex w-full max-w-xl flex-col gap-4">
+					<input
+						type="text"
+						placeholder="Name"
+						className="w-full border border-gray-200 bg-gray-100 px-4 py-3 text-sm outline-none focus:border-gray-400 rounded-lg"
+					/>
+					<input
+						type="email"
+						placeholder="Email"
+						className="w-full border border-gray-200 bg-gray-100 px-4 py-3 text-sm outline-none focus:border-gray-400 rounded-lg"
+					/>
+					<textarea
+						rows={4}
+						placeholder="Hey Faaiz. I was interested in..."
+						className="w-full resize-none border border-gray-200 bg-gray-100 px-4 py-3 text-sm outline-none focus:border-gray-400 rounded-lg"
+					/>
+					<div className="pt-2">
+						<ContactButton word="Send"/>
+					</div>
+				</form>
+			</div>
+		</footer>
+	)
+}
