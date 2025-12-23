@@ -1,39 +1,39 @@
 const projects = [
   {
     id: 1,
-    title: "Project One",
-    description: "Short description for project one.",
-    image: "/p1.png",
+    title: "Study Spotr",
+    description: "Study Spotr is a web application that allows users to find study groups and study partners based on their location and interests.",
+    image: "/ss.png",  
   },
   {
     id: 2,
-    title: "Project Two",
+    title: "ASL Express",
     description: "Short description for project two.",
-    image: "/p1.png",
+    image: "/asl.png",
   },
   {
     id: 3,
-    title: "Project Three",
+    title: "Pharmabotics",
     description: "Short description for project three.",
-    image: "/p1.png",
+    image: "/pharmabotics.png",
   },
   {
     id: 4,
-    title: "Project Four",
+    title: "Football Wizard",
     description: "Short description for project four.",
-    image: "/p1.png",
+    image: "/footballwizard.png",
   },
   {
     id: 5,
-    title: "Project Five",
+    title: "Dragon Ball Shooters",
     description: "Short description for project five.",
-    image: "/p1.png",
+    image: "/dbshooters.png",
   },
   {
     id: 6,
-    title: "Project Six",
+    title: "Nouri",
     description: "Short description for project six.",
-    image: "/p1.png",
+    image: "/nouri.png",
   },
 ];
 
@@ -48,12 +48,12 @@ export default function notableProjects() {
         <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
           {projects.map((project) => (
             <div key={project.id} className="flex flex-col gap-5">
-              <div className="overflow-hidden bg-gray-100 rounded-lg">
+              <div className="overflow-hidden rounded-lg drop-shadow-2xl hover:-rotate-3 transition-transform duration-300 ease-in-out">
                 <img
                   src={project.image}
                   alt={project.title}
-                  height={500}
-                  width={500}
+                  height={300}
+                  width={700}
                   className=""
                 />
               </div>

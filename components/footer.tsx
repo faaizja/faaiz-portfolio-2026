@@ -14,10 +14,10 @@ export default function Footer() {
 						I’m always open to meeting new people and hearing what you're passionate about. My inbox is always open for anything from project inquiries to casual tech chats and everything in between.
 					</p>
 					<div className="flex flex-wrap lg:gap-4 gap-3 mt-6 lg:mt-22">
-						<SocialIcon url="https://www.linkedin.com/in/faaiz-abdullah-9004391a4/" network="linkedin" className='hover:scale-120 transition-transform duration-300 ease-in-out'/>
-						<SocialIcon url="https://github.com/faaizja" network="github" className='hover:scale-120 transition-transform duration-300 ease-in-out'/>
-						<SocialIcon url="https://discordapp.com/users/faaizja" network="discord" className='hover:scale-120 transition-transform duration-300 ease-in-out'/>
-						<SocialIcon url="https://www.instagram.com/faaiz.jd" network="instagram" className='hover:scale-120 transition-transform duration-300 ease-in-out'/>
+						<SocialIcon url="https://www.linkedin.com/in/faaiz-abdullah-9004391a4/" network="linkedin" className='hover:-rotate-12 transition-transform duration-300 ease-in-out'/>
+						<SocialIcon url="https://github.com/faaizja" network="github" className='hover:-rotate-12 transition-transform duration-300 ease-in-out'/>
+						<SocialIcon url="https://discordapp.com/users/faaizja" network="discord" className='hover:-rotate-12 transition-transform duration-300 ease-in-out'/>
+						<SocialIcon url="https://www.instagram.com/faaiz.jd" network="instagram" className='hover:-rotate-12 transition-transform duration-300 ease-in-out'/>
 					</div>
 				</div>
 
