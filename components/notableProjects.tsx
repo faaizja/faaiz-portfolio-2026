@@ -1,72 +1,126 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const projects = [
   {
     id: 1,
     title: "Study Spotr",
-    description: "Study Spotr is a web application that allows users to find study groups and study partners based on their location and interests.",
-    image: "/ss.png",  
+    type: "Full-Stack Project",
+    description: "A real-time study spot discovery app with Mapbox integration for live location tracking[cite: 26, 28, 29].",
+    tech: ["React", "Node.js", "MongoDB", "AWS S3", "Mapbox"],
+    image: "/ss.png",
   },
   {
     id: 2,
     title: "ASL Express",
-    description: "Short description for project two.",
+    type: "Hackathon Winner",
+    description: "Award-winning AI platform bridging communication barriers using Gemini API and Arduino[cite: 21, 23, 24, 25].",
+    tech: ["Gemini AI", "Arduino", "Next.js", "ElevenLabs"],
     image: "/asl.png",
   },
   {
     id: 3,
     title: "Pharmabotics",
-    description: "Short description for project three.",
+    type: "Course Work",
+    description: "Automated medical dispensing system featuring a real-time Firebase monitoring dashboard[cite: 31, 34, 35].",
+    tech: ["React", "Node.js", "Firebase", "Arduino"],
     image: "/pharmabotics.png",
   },
   {
     id: 4,
     title: "Football Wizard",
-    description: "Short description for project four.",
+    type: "Personal Project",
+    description: "A data-driven analytics tool for football statistics and performance tracking.",
+    tech: ["Python", "JavaScript", "PostgreSQL"],
     image: "/footballwizard.png",
   },
   {
     id: 5,
     title: "Dragon Ball Shooters",
-    description: "Short description for project five.",
+    type: "Game Dev",
+    description: "Fast-paced browser shooter game inspired by the Dragon Ball universe.",
+    tech: ["JavaScript", "HTML5 Canvas"],
     image: "/dbshooters.png",
   },
   {
     id: 6,
     title: "Nouri",
-    description: "Short description for project six.",
+    type: "Startup / Project",
+    description: "Smart nutrition tracking platform designed to help users maintain a healthy lifestyle.",
+    tech: ["TypeScript", "Supabase", "React Native"],
     image: "/nouri.png",
   },
 ];
 
-export default function notableProjects() {
+export default function NotableProjects() {
   return (
-    <section className="w-full bg-white text-black py-16">
-      <div className="mx-auto flex max-w-fit flex-col gap-12 px-6 md:px-12">
-        <h1 className="text-left text-2xl lg:text-4xl font-semibold tracking-tight">
-          Notable Projects
-        </h1>
+    <section className="w-full bg-white py-24 text-black">
+      <div className="mx-auto max-w-full px-6 md:px-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
+            Notable Projects
+          </h1>
+          <div className="mt-4 h-1 w-20 bg-black"></div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
-          {projects.map((project) => (
-            <div key={project.id} className="flex flex-col gap-5">
-              <div className="overflow-hidden rounded-lg drop-shadow-2xl hover:-rotate-3 transition-transform duration-300 ease-in-out">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <motion.div 
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group flex flex-col gap-6"
+            >
+              <div className="relative aspect-[16/10] rounded-xl ">
                 <img
                   src={project.image}
                   alt={project.title}
-                  height={300}
-                  width={700}
-                  className=""
+                  className="h-full w-full transition-transform duration-300 ease-in-out group-hover:-rotate-3"
                 />
+                {/* Floating Project Type Tag */}
+                <div className="absolute left-4 top-4">
+                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-black backdrop-blur-sm shadow-sm ring-1 ring-black/5">
+                    {project.type}
+                  </span>
+                </div>
               </div>
 
-              <div className="">
-                <h2 className="text-md lg:text-2xl font-semibold text-black">{project.title}</h2>
-                <p className="text-sm lg:text-lg text-gray-600">{project.description}</p>
+              {/* Text Content */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-2xl font-bold text-black">{project.title}</h2>
+                  <div className="h-[1px] flex-grow mx-4 bg-gray-100"></div>
+                </div>
+                
+                <p className="line-clamp-2 text-base leading-relaxed text-gray-600">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack Display */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.tech.map((item) => (
+                    <span 
+                      key={item} 
+                      className="text-[11px] font-semibold text-gray-400 uppercase tracking-widest"
+                    >
+                      {item} {project.tech.indexOf(item) !== project.tech.length - 1 && "•"}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-
     </section>
   );
 }

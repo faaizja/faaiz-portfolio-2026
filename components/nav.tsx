@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -20,11 +19,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white border drop-shadow-xl backdrop-blur-2xl">
+    <nav className="sticky top-0 z-50 w-full bg-gray-50 border drop-shadow-xlbackdrop-blur-2xl">
       <div className="mx-auto flex max-w-full items-center justify-between px-6 py-5 md:px-12">
         {/* Logo */}
-        <a href="#" className="text-xl font-bold tracking-tight text-black">
-          Logo
+        <a href="/" className="text-xl font-bold tracking-tight text-black hover:-rotate-12 transition-transform duration-300 ease-in-out">
+          <span className="font-cairo uppercase">f</span>
+          <span className="font-cairo uppercase">a</span>
         </a>
 
         {/* Desktop Links */}

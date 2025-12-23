@@ -6,7 +6,7 @@ import ContactButton from "../components/contactButton";
 
 export default function Footer() {
 	return (
-		<footer className="w-full bg-white text-black py-12">
+		<footer className="w-full bg-gray-50 text-black py-12">
 			<div className="mx-auto flex flex-col gap-10 px-6 md:flex-row md:items-start md:justify-between md:px-12">
 				<div className="max-w-md space-y-4">
 					<h1 className="text-2xl lg:text-4xl font-semibold tracking-tight">Let's connect</h1>
