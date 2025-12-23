@@ -41,13 +41,13 @@ export default function notableProjects() {
   return (
     <section className="w-full bg-white text-black py-16">
       <div className="mx-auto flex max-w-fit flex-col gap-12 px-6 md:px-12">
-        <h1 className="text-center text-2xl font-semibold tracking-tight">
+        <h1 className="text-left text-2xl lg:text-4xl font-semibold tracking-tight">
           Notable Projects
         </h1>
 
-        <div className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
+        <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
           {projects.map((project) => (
-            <div key={project.id} className="flex flex-col gap-10">
+            <div key={project.id} className="flex flex-col gap-5">
               <div className="overflow-hidden bg-gray-100 rounded-lg">
                 <img
                   src={project.image}
@@ -58,9 +58,9 @@ export default function notableProjects() {
                 />
               </div>
 
-              <div className="space-y-1">
-                <h2 className="text-sm font-semibold text-black">{project.title}</h2>
-                <p className="text-xs text-gray-600">{project.description}</p>
+              <div className="">
+                <h2 className="text-md lg:text-2xl font-semibold text-black">{project.title}</h2>
+                <p className="text-sm lg:text-lg text-gray-600">{project.description}</p>
               </div>
             </div>
           ))}

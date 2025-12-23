@@ -11,7 +11,7 @@ export default function Navbar() {
     { name: "About", href: "#" },
     { name: "Experience", href: "#" },
     { name: "Contact", href: "#" },
-    { name: "Resume", href: "#" },
+    { name: "Resume", href: "/FaaizAbdullahResume.pdf" },
   ];
 
   const menuVariants = {
@@ -33,6 +33,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
+              {...(link.name === "Resume" ? { download: "FaaizAbdullahResume.pdf" } : {})}
               className="relative text-black after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-black after:content-[''] after:transition-transform after:duration-300 after:ease-in-out hover:after:scale-x-100"
             >
               {link.name}
@@ -66,6 +67,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
+                  {...(link.name === "Resume" ? { download: "FaaizAbdullahResume.pdf" } : {})}
                   className="text-gray-600 hover:text-black"
                 >
                   {link.name}
