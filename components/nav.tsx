@@ -7,19 +7,32 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "About", href: "#" },
+    { name: "About", href: "/about" },
     { name: "Experience", href: "#" },
     { name: "Contact", href: "#" },
     { name: "Resume", href: "/FaaizAbdullahResume.pdf" },
   ];
 
   const menuVariants = {
-    closed: { opacity: 0, y: -20 },
+    closed: { 
+      opacity: 0, 
+      height: 0,
+      transition: { duration: 0.3, ease: "easeInOut", when: "afterChildren" } 
+    },
+    open: { 
+      opacity: 1, 
+      height: "100vh",
+      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1], when: "beforeChildren" } 
+    },
+  };
+
+  const linkVariants = {
+    closed: { opacity: 0, y: 10 },
     open: { opacity: 1, y: 0 },
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-gray-50 border drop-shadow-xlbackdrop-blur-2xl">
+    <nav className="sticky top-0 z-50 w-full bg-gray-50/70 border-b border-gray-100 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-full items-center justify-between px-6 py-5 md:px-12">
         {/* Logo */}
         <a href="/" className="text-xl font-bold tracking-tight text-black hover:-rotate-12 transition-transform duration-300 ease-in-out">
@@ -43,7 +56,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="block text-black md:hidden"
+          className="relative z-50 block text-black md:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -58,22 +71,35 @@ export default function Navbar() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="absolute left-0 top-full w-full border-b border-gray-100 bg-white px-6 py-8 shadow-xl md:hidden"
+            className="fixed inset-0 top-0 left-0 w-full bg-white flex flex-col items-center justify-center md:hidden"
           >
-            <div className="flex flex-col gap-6 text-center text-lg font-medium">
-              {navLinks.map((link) => (
-                <a
+            <div className="flex flex-col gap-8 text-center">
+              {navLinks.map((link, i) => (
+                <motion.div
                   key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  {...(link.name === "Resume" ? { download: "FaaizAbdullahResume.pdf" } : {})}
-                  className="text-gray-600 hover:text-black"
+                  variants={linkVariants}
+                  transition={{ delay: i * 0.1 }}
                 >
-                  {link.name}
-                </a>
+                  <a
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    {...(link.name === "Resume" ? { download: "FaaizAbdullahResume.pdf" } : {})}
+                    className="text-4xl font-bold tracking-tighter text-black hover:text-gray-400 transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </motion.div>
               ))}
             </div>
+            
+            {/* Social / Footer hint in mobile menu */}
+            <motion.div 
+              variants={linkVariants}
+              transition={{ delay: 0.4 }}
+              className="absolute bottom-12 text-sm font-medium uppercase tracking-widest text-gray-400"
+            >
+              Faaiz Abdullah &copy; 2026
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

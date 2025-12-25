@@ -20,7 +20,7 @@ export default function Footer() {
 						<SocialIcon url="https://www.instagram.com/faaiz.jd" network="instagram" className='hover:-rotate-12 transition-transform duration-300 ease-in-out'/>
 					</div>
 				</div>
-
+				
 				<form className="flex w-full max-w-xl flex-col gap-4">
 					<input
 						type="text"
@@ -41,6 +41,9 @@ export default function Footer() {
 						<ContactButton word="Send"/>
 					</div>
 				</form>
+			</div>
+			<div className='pt-20 mx-auto flex flex-col px-6 md:flex-row md:items-start md:justify-between md:px-12'>
+				<h2 className='text-sm font-semibold text-gray-400 uppercase tracking-widest'>Faaiz Abdullah | All rights reserved &copy; 2026</h2>
 			</div>
 		</footer>
 	)

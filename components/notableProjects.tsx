@@ -67,7 +67,6 @@ export default function NotableProjects() {
           <h1 className="text-4xl font-bold tracking-tight lg:text-5xl">
             Notable Projects
           </h1>
-          <div className="mt-4 h-1 w-20 bg-black"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
@@ -84,11 +83,11 @@ export default function NotableProjects() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-full transition-transform duration-300 ease-in-out group-hover:-rotate-3"
+                  className="hover:cursor-pointer h-full w-full transition-transform duration-300 ease-in-out hover:-rotate-3"
                 />
                 {/* Floating Project Type Tag */}
                 <div className="absolute left-4 top-4">
-                  <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wider text-black backdrop-blur-sm shadow-sm ring-1 ring-black/5">
+                  <span className="rounded-md bg-white px-3 py-1 text-xs font-bold uppercase tracking-wider text-black drop-shadow-2xl border ring-1 ring-black/5">
                     {project.type}
                   </span>
                 </div>
@@ -108,13 +107,22 @@ export default function NotableProjects() {
                 {/* Tech Stack Display */}
                 <div className="flex flex-wrap gap-2 pt-2">
                   {project.tech.map((item) => (
-                    <span 
-                      key={item} 
+                    <span
+                      key={item}
                       className="text-[11px] font-semibold text-gray-400 uppercase tracking-widest"
                     >
                       {item} {project.tech.indexOf(item) !== project.tech.length - 1 && "•"}
                     </span>
                   ))}
+                </div>
+
+                {/* Call-to-action */}
+                <div className="pt-3">
+                  <a
+                    className="hover:cursor-pointer inline-flex items-center justify-center rounded-md border border-black px-4 py-2 text-xs font-medium uppercase tracking-wide text-black transition-all duration-200 hover:-translate-y-px hover:bg-black hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                  >
+                    Check it out
+                  </a>
                 </div>
               </div>
             </motion.div>
