@@ -7,7 +7,7 @@ import Navbar from "../../components/nav";
 import Footer from "../../components/footer";
 
 const photos = [
-  { src: "/faaiz.jpg", alt: "Faaiz portrait" },
+  { src: "public/faaiz.JPG", alt: "Faaiz portrait" },
   { src: "/turkey.png", alt: "In turkey" },
   { src: "/malaysia.png", alt: "In Malaysia" },
   { src: "/ski.png", alt: "Skiing" },
