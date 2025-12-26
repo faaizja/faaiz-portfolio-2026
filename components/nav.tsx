@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion"; // Added Variants type
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -13,20 +13,29 @@ export default function Navbar() {
     { name: "Resume", href: "/FaaizAbdullahResume.pdf" },
   ];
 
-  const menuVariants = {
+  // Explicitly typing as Variants solves the 'index signature' error
+  const menuVariants: Variants = {
     closed: {
       opacity: 0,
       height: 0,
-      transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1], when: "afterChildren" },
+      transition: { 
+        duration: 0.3, 
+        ease: [0.42, 0, 0.58, 1], // Cubic-bezier array
+        when: "afterChildren" 
+      },
     },
     open: {
       opacity: 1,
       height: "100vh",
-      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1], when: "beforeChildren" },
+      transition: { 
+        duration: 0.4, 
+        ease: [0.16, 1, 0.3, 1], // Consistent cubic-bezier array
+        when: "beforeChildren" 
+      },
     },
   };
 
-  const linkVariants = {
+  const linkVariants: Variants = {
     closed: { opacity: 0, y: 10 },
     open: { opacity: 1, y: 0 },
   };
@@ -92,7 +101,6 @@ export default function Navbar() {
               ))}
             </div>
             
-            {/* Social / Footer hint in mobile menu */}
             <motion.div 
               variants={linkVariants}
               transition={{ delay: 0.4 }}
