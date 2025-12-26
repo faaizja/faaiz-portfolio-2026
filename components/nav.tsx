@@ -14,15 +14,15 @@ export default function Navbar() {
   ];
 
   const menuVariants = {
-    closed: { 
-      opacity: 0, 
+    closed: {
+      opacity: 0,
       height: 0,
-      transition: { duration: 0.3, ease: "easeInOut", when: "afterChildren" } 
+      transition: { duration: 0.3, ease: [0.42, 0, 0.58, 1], when: "afterChildren" },
     },
-    open: { 
-      opacity: 1, 
+    open: {
+      opacity: 1,
       height: "100vh",
-      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1], when: "beforeChildren" } 
+      transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1], when: "beforeChildren" },
     },
   };
 
