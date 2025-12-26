@@ -9,6 +9,8 @@ import Footer from "../../components/footer";
 const photos = [
   { src: "/faaiz.jpg", alt: "Faaiz portrait" },
   { src: "/turkey.png", alt: "In turkey" },
+  { src: "/malaysia.png", alt: "In Malaysia" },
+  { src: "/ski.png", alt: "Skiing" },
 ];
 
 export default function AboutPage() {
@@ -68,17 +70,14 @@ export default function AboutPage() {
               className="relative flex justify-center lg:justify-end"
             >
               <div 
-                className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-2xl shadow-xl bg-gray-100"
+                className="relative aspect-[3/4] w-full max-w-sm overflow-hidden rounded-xl shadow-xl bg-gray-100"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
-                {/* Continuous Scroll Wrapper 
-                  We repeat the list of photos twice to ensure no gap appears during transition.
-                */}
                 <div 
                   className="flex flex-col animate-infinite-vertical"
                   style={{ 
-                    animationDuration: isHovered ? '25s' : '12s',
+                    animationDuration: '25s',
                     animationTimingFunction: 'linear',
                     animationIterationCount: 'infinite'
                   }}
@@ -111,7 +110,7 @@ export default function AboutPage() {
         <style jsx global>{`
           @keyframes infinite-vertical {
             0% { transform: translateY(0); }
-            100% { transform: translateY(-50%); }
+            100% { transform: translateY(-80%); }
           }
           .animate-infinite-vertical {
             animation-name: infinite-vertical;
@@ -136,9 +135,6 @@ export default function AboutPage() {
                 <div className="text-xl font-semibold text-black">
                   Vancouver, BC
                 </div>
-                <div className="mt-2 text-sm text-gray-600">
-                  Originally from Karachi, Pakistan
-                </div>
               </div>
 
               {/* Focus */}
@@ -148,9 +144,6 @@ export default function AboutPage() {
                 </div>
                 <div className="text-xl font-semibold text-black">
                   Full-Stack & Cloud Development
-                </div>
-                <div className="mt-2 text-sm text-gray-600">
-                  Building AI-powered products and scalable infrastructure
                 </div>
               </div>
             </motion.div>
@@ -168,11 +161,8 @@ export default function AboutPage() {
           >
             <div>
               <h2 className="text-3xl font-bold tracking-tight">
-                What I Work With
+                Currenty working with
               </h2>
-              <p className="mt-3 text-base text-gray-600">
-                Technologies and tools I use to bring ideas to life
-              </p>
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -259,7 +249,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold">Developer Experience</h3>
                   <p className="text-sm leading-relaxed text-gray-400">
                     Clean code, clear documentation, and thoughtful architecture that makes 
-                    teams move faster and builds more maintainable.
+                    teams more efficient and productive.
                   </p>
                 </div>
 
@@ -267,8 +257,7 @@ export default function AboutPage() {
                   <div className="text-5xl font-bold text-gray-600">03</div>
                   <h3 className="text-xl font-semibold">Continuous Learning</h3>
                   <p className="text-sm leading-relaxed text-gray-400">
-                    Staying curious, experimenting with new tools, and pushing boundaries 
-                    while maintaining reliability and performance.
+                    Staying curious, experimenting with new tools, and always learning new tools to improve my skills.
                   </p>
                 </div>
               </div>
