@@ -21,7 +21,7 @@ export default function Hero() {
                 <div className="flex justify-center md:justify-end"> {/* image on right*/}
                     <div className="overflow-hidden rounded-lg">
                         <Image
-                            src="public/faaiz.JPG"
+                            src="/faaiz.JPG"
                             alt="Image of Faaiz"
                             height={600}
                             width={450}
